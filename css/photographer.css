@@ -1,11 +1,70 @@
 #contact_modal {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 15%;
+    top: 5%;
+    height: 100%;
+    width: 75%;
+    overflow: auto;
 }
 
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: grid;
+}
+
+.photograph-header article {
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    align-items: center;
+    justify-items: flex-end;
+    margin-right: 30px;
+
+}
+
+.photograph-header article img {
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+    object-fit: cover;
+}
+
+.photograph-header article div {
+    width: 90%;
+}
+
+.photograph-header article h1 {
+    color: #D3573C;
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+.photograph-header article p {
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: block;
+}
+
+.photograph-header article p span {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.photograph-header .city {
+    color: #901C1C;
+    font-size:1.8rem;
+}
+
+.photograph-header .price {
+    color: #525252;
+}
+
+.photograph-header .slogan {
+    font-size: 1.2rem;
 }
 
 .contact_button {
@@ -16,9 +75,44 @@
     width: 170px;
     height: 70px;
     border: none;
+    margin-top: 20px;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.filter {
+    height: 300px;
+    margin: 0 100px;
+    display: grid;
+}
+
+.media_section {
+    margin: 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 3;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.media_section article {
+    margin: 20px 30px;
+}
+
+.media_section article img{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.media_section article div {
+    color: #901C1C;
+    display: flex;
+    flex-direction: row;
+    flex: 3;
 }
 
 .modal {
@@ -43,7 +137,7 @@
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 3rem;
     font-weight: normal;
     text-align: center;
 }
@@ -58,6 +152,7 @@ form {
 form label {
     color: #312E2E;
     font-size: 36px;
+    margin-top: 0;
 }
 
 form div {
@@ -65,7 +160,7 @@ form div {
     flex-direction: column;
     width: 100%;
     align-items: self-start;
-    margin-bottom: 26px;
+    margin-bottom: 0;
 }
 
 form input {
@@ -73,4 +168,18 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.text-control {
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 20px;
+
+}
+
+.error {
+    font-size: 0.5rem;
+    color: red;
 }

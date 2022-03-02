@@ -53,6 +53,7 @@ h1 {
     height: 200px;
     width: 200px;
     border-radius: 200px;
+    object-fit: cover;
 }
 
 .photographer_section article div {
@@ -69,15 +70,16 @@ h1 {
     text-align: center;
 }
 
-.city {
+.photographer_section .city {
     color: #901C1C;
     font-size:1.1rem;
 }
 
-.price {
+.photographer_section .price {
     color: #525252;
 }
 
-.slogan, .price {
+.photographer_section .slogan, .price {
     font-size: 0.8rem;
 }
+

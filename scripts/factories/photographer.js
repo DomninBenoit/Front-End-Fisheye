@@ -40,13 +40,33 @@ function photographerFactory(data) {
     function getUserCardDOMPage() {
         const article = document.createElement("article");
         const div = document.createElement("div");
+        const btnContact = document.createElement("button");
+        btnContact.classList.add("contact_button");
+        btnContact.setAttribute("onclick", "displayModal()");
+        btnContact.setAttribute("aria-label", `Contact Me`)
+        btnContact.textContent = "Contactez-moi";
         const img = document.createElement('img');
         img.setAttribute("src", picture)
+        img.setAttribute("alt", name)
         const h1 = document.createElement("h1");
         h1.textContent = name;
-        div.appendChild(img);
+        const p = document.createElement('p');
+        const localisation = document.createElement('span');
+        localisation.classList.add('city');
+        localisation.textContent = city + ", " + country;
+        const slogan = document.createElement('span');
+        slogan.classList.add('slogan');
+        slogan.textContent = tagline;
+
+        p.appendChild(localisation);
+        p.appendChild(slogan);
         div.appendChild(h1);
+        div.appendChild(p)
+
         article.appendChild(div);
+        article.appendChild(btnContact);
+        article.appendChild(img);
+;
         return (article);
     }
 
