@@ -81,11 +81,32 @@
     cursor: pointer;
 }
 
-.filter {
-    height: 300px;
-    margin: 0 100px;
-    display: grid;
+.contact_button:hover {
+    background-color: #D3573C;
+    color: black;
 }
+
+.filter {
+    margin: 0 100px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+#sort-by, #sort-by select, #sort-by select option {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    margin: 20px 0 0 20px;
+    background-color: #901C1C;
+    border-radius: 5px;
+}
+
 
 .media_section {
     margin: 0 100px;
@@ -94,7 +115,7 @@
     flex: 3;
     align-items: center;
     align-content: center;
-    text-align: center;
+    justify-content: center;
 }
 
 .media_section article {
@@ -102,6 +123,13 @@
 }
 
 .media_section article img{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.media_section article video{
     width: 350px;
     height: 350px;
     object-fit: cover;
@@ -182,4 +210,22 @@ form input {
 .error {
     font-size: 0.5rem;
     color: red;
+}
+
+.countLikes {
+    background-color: #D3573C;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px 5px 0 0;
+}
+
+.fas, .fa-heart {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    height: 20px;
 }

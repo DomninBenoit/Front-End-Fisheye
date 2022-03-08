@@ -3,9 +3,11 @@
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <link href="css/photographer.css" rel="stylesheet" type="text/css"/>
+    <link href="css/lightbox.css" rel="stylesheet" type="text/css"/>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e8abfa8029.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
 </head>
 <body>
@@ -16,80 +18,93 @@
     <div class="photograph-header" id="photographHeader"></div>
     <div class="filter">
         <h2>Trier par</h2>
-        <ul class="boxList" role="listbox">
-            <li class="choice" role="option">Popularité <span class="fas fa-chevron-up arrow-up-close"></span></li>
-            <li class="choice" role="option">Date</li>
-            <li class="choice" role="option">Titre</li>
-
-        </ul>
-        <input>
+        <select name="sort" id="sort-by" aria-label="Order by">
+            <option value="date">Date</option>
+            <option value="popularity">Popularité</option>
+            <option value="title">Titre</option>
+        </select>
     </div>
     <div class="media_section"></div>
-</main>
-<div id="contact_modal">
-    <div class="modal">
-        <header>
-            <h2>Contactez-moi</h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form"/>
-        </header>
-        <form
-                name="reserve"
-                action="index.html"
-                method="get"
-                id="form"
-                onsubmit="return validate();"
-        >
-            <div>
-                <label aria-label="First name">Prénom</label>
-                <input
-                        class="text-control"
-                        type="text"
-                        id="first"
-                        name="first"
-                        minlength="2"
-                />
-                <span id="errorFirst" class="error"></span>
-            </div>
-            <div>
-                <label aria-label="Last Name">Nom</label>
-                <input
-                        class="text-control"
-                        type="text"
-                        id="last"
-                        name="last"
-                />
-                <span id="errorLast" class="error"></span>
-            </div>
-            <div>
-                <label aria-label="Email">E-mail</label>
-                <input
-                        class="text-control"
-                        type="email"
-                        id="email"
-                        name="email"
-                />
-                <span id="errorEmail" class="error"></span>
-            </div>
-            <div>
-                <label aria-label="Your message">Votre message</label>
-                <textarea
-                        class="text-control"
-                        type="text"
-                        id="message"
-                        name="message"
-                rows="5"
-                >
+    <div class="countLikes">
+<span>test</span>
+    </div>
+    <div id="contact_modal">
+        <div class="modal">
+            <header>
+                <h2>Contactez-moi</h2>
+                <h2 id="photographerNameModal"></h2>
+                <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form"/>
+            </header>
+            <form
+                    name="reserve"
+                    action="index.html"
+                    method="get"
+                    id="form"
+                    onsubmit="return validate();"
+            >
+                <div>
+                    <label aria-label="First name">Prénom</label>
+                    <input
+                            class="text-control"
+                            type="text"
+                            id="first"
+                            name="first"
+                            minlength="2"
+                    />
+                    <span id="errorFirst" class="error"></span>
+                </div>
+                <div>
+                    <label aria-label="Last Name">Nom</label>
+                    <input
+                            class="text-control"
+                            type="text"
+                            id="last"
+                            name="last"
+                    />
+                    <span id="errorLast" class="error"></span>
+                </div>
+                <div>
+                    <label aria-label="Email">E-mail</label>
+                    <input
+                            class="text-control"
+                            type="email"
+                            id="email"
+                            name="email"
+                    />
+                    <span id="errorEmail" class="error"></span>
+                </div>
+                <div>
+                    <label aria-label="Your message">Votre message</label>
+                    <textarea
+                            class="text-control"
+                            type="text"
+                            id="message"
+                            name="message"
+                            rows="5"
+                    >
                 </textarea>
-                <span id="errorMessage" class="error"></span>
-            </div>
-            <button class="contact_button" type="submit" aria-label="Send">Envoyer</button>
-        </form>
+                    <span id="errorMessage" class="error"></span>
+                </div>
+                <button class="contact_button" type="submit" aria-label="Send">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox__close">Fermer</button>
+    <button class="lightbox__next">Suivant</button>
+    <button class="lightbox__prev">Précédent</button>
+    <div class="lightbox__container">
+        <img src="https://picsum.photos/900/1800" alt="image">
     </div>
 </div>
+
 <script src="scripts/helpers/photographer.js"></script>
 <script src="scripts/pages/photographer.js"></script>
 <script src="scripts/factories/photographer.js"></script>
 <script src="scripts/factories/media.js"></script>
 <script src="scripts/utils/contactForm.js"></script>
+<script src="scripts/utils/lightbox.js" type="module" defer></script>
 </body>
 </html>

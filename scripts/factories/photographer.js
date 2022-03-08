@@ -66,7 +66,7 @@ function photographerFactory(data) {
         article.appendChild(div);
         article.appendChild(btnContact);
         article.appendChild(img);
-;
+
         return (article);
     }
 

@@ -6,6 +6,8 @@ const photographerDisplayData = (photographer) => {
     const photographerModelPage = photographerFactory(photographer);
     const userCardDOMPage = photographerModelPage.getUserCardDOMPage();
     photographerHeader.appendChild(userCardDOMPage);
+    const photographerName = document.getElementById(`photographerNameModal`);
+    photographerName.innerText = photographer.name;
 };
 
 const mediaDisplayData = (photographer) => {
