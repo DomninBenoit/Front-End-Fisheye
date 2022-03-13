@@ -116,6 +116,7 @@
     align-items: center;
     align-content: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .media_section article {
@@ -168,6 +169,7 @@
     font-size: 3rem;
     font-weight: normal;
     text-align: center;
+
 }
 
 form {

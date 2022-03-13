@@ -1,21 +1,22 @@
 function mediaFactory(data) {
     const {id, photographerId, title, image, video, likes, date, price} = data;
-    const name = ``
 
-
-    function getMediaCardDOM() {
+    function getMediaCardDOM(medias) {
         const article = document.createElement('article');
-        article.onclick = lightboxOpen;
+
         let media;
 
         if (image) {
             media = document.createElement('img');
             media.setAttribute("src", `assets/Sample Photos/${photographerId}/${image}`);
+            media.setAttribute('onclick', `lightboxOpen(${id})`)
         } else {
             media = document.createElement('video');
             media.setAttribute("src", `assets/Sample Photos/${photographerId}/${video}`);
-            media.autoplay = true;
+            media.setAttribute('onclick', `lightboxOpen(${id})`)
+            media.autoplay = false;
         }
+
         const div = document.createElement("div");
         const titleImg = document.createElement('p')
         titleImg.textContent = title
@@ -26,10 +27,11 @@ function mediaFactory(data) {
         heart.classList.add('fas');
         heart.classList.add('fa-heart');
 
-        article.appendChild(media)
+
         div.appendChild(titleImg);
         div.appendChild(followImg);
         div.appendChild(heart);
+        article.appendChild(media);
         article.appendChild(div);
 
         return (article);

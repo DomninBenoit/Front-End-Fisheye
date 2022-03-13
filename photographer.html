@@ -26,7 +26,7 @@
     </div>
     <div class="media_section"></div>
     <div class="countLikes">
-<span>test</span>
+        <span>test</span>
     </div>
     <div id="contact_modal">
         <div class="modal">
@@ -92,19 +92,18 @@
 </main>
 
 <div class="lightbox" id="lightbox">
-    <button class="lightbox__close">Fermer</button>
-    <button class="lightbox__next">Suivant</button>
-    <button class="lightbox__prev">Précédent</button>
-    <div class="lightbox__container">
-        <img src="https://picsum.photos/900/1800" alt="image">
-    </div>
+    <button class="lightbox__close" onclick="closeLightbox()">Fermer</button>
+    <button class="lightbox__next" onclick="changeMedia(1)">Suivant</button>
+    <button class="lightbox__prev" onclick="changeMedia(-1)">Précédent</button>
+    <div class="lightbox__container" id="lightbox--container"></div>
 </div>
 
 <script src="scripts/helpers/photographer.js"></script>
 <script src="scripts/pages/photographer.js"></script>
 <script src="scripts/factories/photographer.js"></script>
 <script src="scripts/factories/media.js"></script>
+<script src="scripts/factories/photographerFactory.js"></script>
 <script src="scripts/utils/contactForm.js"></script>
-<script src="scripts/utils/lightbox.js" type="module" defer></script>
+<script src="scripts/utils/lightbox.js"></script>
 </body>
 </html>

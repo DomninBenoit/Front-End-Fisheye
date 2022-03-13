@@ -15,18 +15,22 @@ const mediaDisplayData = (photographer) => {
     const mediaSection = document.querySelector(".media_section");
     photographer.medias.forEach((media) => {
         const mediaModel = mediaFactory(media);
-        const mediaCardDOM = mediaModel.getMediaCardDOM();
+        const mediaCardDOM = mediaModel.getMediaCardDOM(photographer.medias);
         mediaSection.appendChild(mediaCardDOM);
+
     });
 };
 
 async function initPage() {
+
     let params = new URL(document.location).searchParams;
     let id = params.get('id');
     // Récupère les datas des photographes
     const photographer = await getPhotograph(id);
     photographerDisplayData(photographer);
     mediaDisplayData(photographer);
+    insertImgLightbox(photographer.medias);
+    likesTotal(photographer.medias);
 }
 
 initPage();
