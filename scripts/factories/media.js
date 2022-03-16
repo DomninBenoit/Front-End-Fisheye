@@ -40,3 +40,26 @@ function mediaFactory(data) {
     return {id, photographerId, title, image, likes, date, price, getMediaCardDOM}
 }
 
+function filterMedia(medias) {
+    const option = document.querySelector('.option');
+
+    if (option.toString() === "popularity") {
+     medias.sort(function (a, b) {
+         return a.likes - b.likes;
+     })
+    }
+
+    if (option.toString() === "title") {
+        medias.sort(function (a, b) {
+            return a.title - b.title;
+        })
+    }
+
+    if (option.toString() === "date") {
+        medias.sort(function (a, b) {
+            return a.date - b.date;
+        })
+    }
+}
+
+

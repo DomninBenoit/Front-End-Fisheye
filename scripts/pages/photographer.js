@@ -31,6 +31,12 @@ async function initPage() {
     mediaDisplayData(photographer);
     insertImgLightbox(photographer.medias);
     likesTotal(photographer.medias);
+
+    const filters = document.querySelector(".filter");
+
+    filters.addEventListener("change", (e) =>{
+        filterMedia(photographer.medias);
+        })
 }
 
 initPage();
