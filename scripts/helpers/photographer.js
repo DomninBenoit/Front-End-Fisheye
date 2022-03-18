@@ -31,3 +31,23 @@ let currentPhotographer;
 
     return currentPhotographer;
 };
+
+
+function likesTotal(medias) {
+    const countLikes = document.querySelector('.countLikes');
+    let likesTotalPhotographer = 0;
+    medias.forEach((media) => {
+        likesTotalPhotographer += media.likes;
+    })
+    countLikes.innerHTML = likesTotalPhotographer.toString();
+}
+
+function updateLikesTotal(updateType) {
+    let countLikes = document.getElementById('countLikes');
+
+    if (updateType === "add") {
+        countLikes.innerText = (parseInt(countLikes.innerText, 10)+1).toString();
+    } else {
+        countLikes.innerText = (parseInt(countLikes.innerText, 10)-1).toString();
+    }
+}

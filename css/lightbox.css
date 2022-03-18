@@ -53,7 +53,8 @@
 
 }
 
-.lightbox__container img {
-    max-width: 100%;
-    height: auto;
+.slide {
+    max-width: 90%;
+    width: auto;
+    height: 750px;
 }

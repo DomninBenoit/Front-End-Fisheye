@@ -32,10 +32,14 @@ function insertImgLightbox(medias) {
             mediaLightbox.autoplay = true;
             mediaLightbox.appendChild(sourceVideo);
         }
+        let mediaTitle = document.createElement('h2');
+        mediaTitle.textContent = `${media.title}`;
         mediaLightbox.setAttribute("id", media.id);
         mediaLightbox.style.display = "none";
         container.appendChild(mediaLightbox);
     })
+
+
 }
 
 let index = 0;

@@ -18,15 +18,24 @@ function mediaFactory(data) {
         }
 
         const div = document.createElement("div");
-        const titleImg = document.createElement('p')
+        div.classList.add('detailImg');
+        const titleImg = document.createElement('p');
+        titleImg.classList.add('titleImg');
         titleImg.textContent = title
         const followImg = document.createElement('p');
         followImg.classList.add('followImg');
+        followImg.setAttribute("id", `followImg-${id}`);
+        followImg.setAttribute("aria-label", `likes`)
         followImg.textContent = likes;
         const heart = document.createElement('p')
         heart.classList.add('fas');
         heart.classList.add('fa-heart');
-
+        heart.addEventListener('click', () =>{
+            updateLikesTotal(data.likes > likes ? "less" : "add");
+            data.likes > likes ? data.likes-- : data.likes++;
+            const follow = document.getElementById(`followImg-${id}`);
+            follow.textContent = data.likes;
+        })
 
         div.appendChild(titleImg);
         div.appendChild(followImg);
@@ -36,30 +45,21 @@ function mediaFactory(data) {
 
         return (article);
     }
-
     return {id, photographerId, title, image, likes, date, price, getMediaCardDOM}
 }
 
-function filterMedia(medias) {
-    const option = document.querySelector('.option');
-
-    if (option.toString() === "popularity") {
-     medias.sort(function (a, b) {
-         return a.likes - b.likes;
-     })
-    }
-
-    if (option.toString() === "title") {
-        medias.sort(function (a, b) {
-            return a.title - b.title;
-        })
-    }
-
-    if (option.toString() === "date") {
-        medias.sort(function (a, b) {
-            return a.date - b.date;
-        })
-    }
+function filterMedia(medias, option) {
+    console.log(option)
+    return medias.sort(function (a, b) {
+        if (option === "popularity") {
+            return b.likes - a.likes;
+        } else if (option === "title") {
+            return (a.title).localeCompare(b.title);
+        } else if (option === "date") {
+            return new Date(a.date).getTime() - new Date(b.date).getTime();
+        }
+    })
 }
+
 
 
