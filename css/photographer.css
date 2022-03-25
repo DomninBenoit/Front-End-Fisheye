@@ -119,25 +119,25 @@
     cursor: pointer;
 }
 
-.media_section article {
+.media_section a {
     margin: 20px 30px;
 }
 
-.media_section article img {
+.media_section a img {
     width: 350px;
     height: 350px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.media_section article video {
+.media_section a video {
     width: 350px;
     height: 350px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.media_section article div {
+.media_section a div {
     color: #901C1C;
     display: flex;
     flex-direction: row;
@@ -272,7 +272,7 @@ form input {
 
 .contactMe #photographerNameModal {
     height: 83px;
-    width: 282px;
+    width: auto;
     left: 35px;
     top: 88px;
 }
@@ -283,4 +283,8 @@ form input {
     right: 15px;
     top: 15px;
     border-radius: 0px;
+}
+
+img:focus {
+    outline: 3px solid black;
 }

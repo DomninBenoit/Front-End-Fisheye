@@ -1,21 +1,29 @@
 function mediaFactory(data) {
     const {id, photographerId, title, image, video, likes, date, price} = data;
 
+    /*
+    * Photo card display function
+    */
     function getMediaCardDOM(medias) {
-        const article = document.createElement('article');
+        const article = document.createElement('a');
 
         let media;
 
         if (image) {
             media = document.createElement('img');
             media.setAttribute("src", `assets/Sample Photos/${photographerId}/${image}`);
-            media.setAttribute('onclick', `lightboxOpen(${id})`)
         } else {
             media = document.createElement('video');
             media.setAttribute("src", `assets/Sample Photos/${photographerId}/${video}`);
-            media.setAttribute('onclick', `lightboxOpen(${id})`)
             media.autoplay = false;
         }
+        media.addEventListener("click", () => lightboxOpen(id));
+        media.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                lightboxOpen(id)
+            }
+        });
+        media.setAttribute("tabindex", "3");
 
         const div = document.createElement("div");
         div.classList.add('detailImg');
@@ -30,7 +38,7 @@ function mediaFactory(data) {
         const heart = document.createElement('p')
         heart.classList.add('fas');
         heart.classList.add('fa-heart');
-        heart.addEventListener('click', () =>{
+        heart.addEventListener('click', () => {
             updateLikesTotal(data.likes > likes ? "less" : "add");
             data.likes > likes ? data.likes-- : data.likes++;
             const follow = document.getElementById(`followImg-${id}`);
@@ -45,9 +53,12 @@ function mediaFactory(data) {
 
         return (article);
     }
+
     return {id, photographerId, title, image, likes, date, price, getMediaCardDOM}
 }
-
+/*
+* filter management function
+*/
 function filterMedia(medias, option) {
     console.log(option)
     return medias.sort(function (a, b) {

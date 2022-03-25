@@ -3,6 +3,9 @@ function photographerFactory(data) {
 
     const picture = `assets/photographers/${portrait}`;
 
+    /*
+    *function of displaying the photographer's resume on the home page
+    */
     function getUserCardDOM() {
         const lien = document.createElement("a");
         lien.setAttribute("href", `photographer.html?id=${id}`);
@@ -37,13 +40,17 @@ function photographerFactory(data) {
         return (article);
     }
 
+    /*
+    * display of the header of the photographer's page
+    */
     function getUserCardDOMPage() {
         const article = document.createElement("article");
         const div = document.createElement("div");
         const btnContact = document.createElement("button");
         btnContact.classList.add("contact_button");
         btnContact.setAttribute("onclick", "displayModal()");
-        btnContact.setAttribute("aria-label", `Contact Me`)
+        btnContact.setAttribute("aria-label", `Contact Me`);
+        btnContact.setAttribute("tabindex", "1");
         btnContact.textContent = "Contactez-moi";
         const img = document.createElement('img');
         img.setAttribute("src", picture)

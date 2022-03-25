@@ -16,9 +16,9 @@
 </header>
 <main id="main">
     <div class="photograph-header" id="photographHeader"></div>
-    <div class="filter">
+    <div class="filter" >
         <h2>Trier par</h2>
-        <select name="sort" id="sort-by" aria-label="Order by">
+        <select name="sort" id="sort-by" aria-label="Order by" tabindex="2">
             <option value="date" class="option">Date</option>
             <option value="popularity" class="option">Popularité</option>
             <option value="title" class="option">Titre</option>
@@ -35,11 +35,11 @@
     <div id="contact_modal">
         <div class="modal">
             <header>
-                <div class="contactMe">
+                <div class="contactMe" >
                     <h2>Contactez-moi</h2>
                     <h2 id="photographerNameModal"></h2>
                 </div>
-                <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form"/>
+                <img src="assets/icons/close.svg" id="contactModalClose" onclick="closeModal()" alt="Close Contact form" tabindex="0"/>
             </header>
             <form
                     name="reserve"
@@ -98,17 +98,18 @@
 </main>
 
 <div class="lightbox" id="lightbox">
-    <button class="lightbox__close" onclick="closeLightbox()" aria-label="Close dialog">Fermer</button>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close dialog">Fermer</button>
     <button class="lightbox__next" onclick="changeMedia(1)" aria-label="Next image">Suivant</button>
     <button class="lightbox__prev" onclick="changeMedia(-1)" aria-label="Previous image">Précédent</button>
     <div class="lightbox__container" id="lightbox--container"></div>
 </div>
 
 <script src="scripts/helpers/photographer.js"></script>
-<script src="scripts/pages/photographer.js"></script>
+
 <script src="scripts/factories/photographer.js"></script>
+<script src="scripts/utils/lightbox.js"></script>
 <script src="scripts/factories/media.js"></script>
 <script src="scripts/utils/contactForm.js"></script>
-<script src="scripts/utils/lightbox.js"></script>
+<script src="scripts/pages/photographer.js"></script>
 </body>
 </html>
