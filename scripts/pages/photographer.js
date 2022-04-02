@@ -1,3 +1,6 @@
+/*
+Affichage des données d'un photographe
+ */
 const photographerDisplayData = (photographer) => {
     const photographerHeader = document.getElementById('photographHeader');
     const photographerModelPage = photographerFactory(photographer);
@@ -8,6 +11,9 @@ const photographerDisplayData = (photographer) => {
 
 };
 
+/*
+Affichage des photos d'un photographe
+ */
 const mediaDisplayData = (medias) => {
     const mediaSection = document.querySelector(".media_section");
     mediaSection.innerHTML = "";
@@ -18,6 +24,10 @@ const mediaDisplayData = (medias) => {
     });
 };
 
+
+/*
+à l'initialisation de la page, execute une suite de tache, de la récup des photographe à la filtration des medias
+ */
 async function initPage() {
     let params = new URL(document.location).searchParams;
     let id = params.get('id');
@@ -56,8 +66,9 @@ form.addEventListener('submit', validate);
 
 
 //contrôle de la saisie
-function validate(a) {
-    a.preventDefault();
+function validate(event) {
+
+    event.preventDefault();
 
     const inputValidate = [];
 

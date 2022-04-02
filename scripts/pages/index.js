@@ -1,3 +1,4 @@
+// recup et utilisation des données de l'ensemble des photographes sur la page d'accueil
 async function displayData(photographers) {
     const photographersSection = document.querySelector('.photographer_section');
 
@@ -8,6 +9,7 @@ async function displayData(photographers) {
     });
 };
 
+// lancement à l'ouverture de la page d'accueil
 async function init() {
     // Récupère les datas des photographes
     const {photographers} = await getPhotographers();

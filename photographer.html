@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <link href="css/photographer.css" rel="stylesheet" type="text/css"/>
@@ -12,7 +12,7 @@
 </head>
 <body>
 <header>
-    <img src="assets/images/logo.png" class="logo"/>
+    <img src="assets/images/logo.png" class="logo" alt="logo"/>
 </header>
 <main id="main">
     <div class="photograph-header" id="photographHeader"></div>
@@ -37,7 +37,7 @@
             <header>
                 <div class="contactMe" >
                     <h2>Contactez-moi</h2>
-                    <h2 id="photographerNameModal"></h2>
+                    <span id="photographerNameModal"></span>
                 </div>
                 <img src="assets/icons/close.svg" id="contactModalClose" onclick="closeModal()" alt="Close Contact form" tabindex="0"/>
             </header>
@@ -46,7 +46,6 @@
                     action="index.html"
                     method="get"
                     id="form"
-                    onsubmit="return validate();"
             >
                 <div>
                     <label aria-label="First name">Prénom</label>
@@ -83,7 +82,6 @@
                     <label aria-label="Your message">Votre message</label>
                     <textarea
                             class="text-control"
-                            type="text"
                             id="message"
                             name="message"
                             rows="5"

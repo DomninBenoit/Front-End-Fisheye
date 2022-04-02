@@ -3,6 +3,7 @@ let slides;
 let currentMediaId;
 let index = 0;
 
+// ouverture lightbox sur l'image lié par l'id
 function lightboxOpen(id) {
     currentMediaId = id;
     lightbox.style.display = "block";
@@ -13,6 +14,7 @@ function lightboxOpen(id) {
     document.getElementById("lightboxClose").focus();
 }
 
+// fermeture lightbox et de l'ensemble des images visionnées
 function closeLightbox() {
     const imgById = document.getElementById(currentMediaId);
     imgById.style.display = "none";
@@ -46,7 +48,6 @@ function insertImgLightbox(medias) {
         let mediaTitle = document.createElement('h2');
         mediaTitle.textContent = `${media.title}`;
         div.setAttribute("id", media.id);
-        console.log(div)
         div.style.display = "none";
         div.appendChild(mediaLightbox);
         div.appendChild(mediaTitle);

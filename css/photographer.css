@@ -275,6 +275,9 @@ form input {
     width: auto;
     left: 35px;
     top: 88px;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0;
 }
 
 .contactMe img {

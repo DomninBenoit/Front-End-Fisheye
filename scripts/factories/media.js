@@ -60,7 +60,6 @@ function mediaFactory(data) {
 * filter management function
 */
 function filterMedia(medias, option) {
-    console.log(option)
     return medias.sort(function (a, b) {
         if (option === "popularity") {
             return b.likes - a.likes;
